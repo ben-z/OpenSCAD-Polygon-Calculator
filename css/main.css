@@ -373,7 +373,7 @@ body {
   body a:hover {
     text-decoration: underline; }
 
-@media only screen and (min-width: 501px) and (max-width: 1247px) {
+@media only screen and (min-width: 501px) and (max-width: 1149px) {
   .github-ribbon {
     display: none; } }
 @media only screen and (max-width: 500px) {

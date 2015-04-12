@@ -1,5 +1,5 @@
 $break-small: 500px;
-$break-large: 1248px;;
+$break-large: 1150px;;
 
 @mixin media($media) {
   @if $media == small {
