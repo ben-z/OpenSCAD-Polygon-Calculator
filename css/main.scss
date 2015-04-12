@@ -1,0 +1,231 @@
+@import "lib/normalize";
+@import "lib/mixins/clearfix";
+@import "lib/mixins/function-button";
+@import "lib/mixins/media-query";
+
+$base-font-family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-weight: 400;
+
+body {
+    font-family: $base-font-family;
+    background-color: white;
+    text-align:center;
+    
+    a {
+      color: #0074d9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+}
+
+.github-ribbon{
+    @include media(medium){
+        display: none;
+    }
+    @include media(small){
+        display: none;
+    }
+}
+
+.introduction {
+    display: block;
+    width: 980px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    img {
+        width: 500px;
+    }
+    
+    ul.instructions{
+        list-style: none;
+        text-align: left;
+        width: 50%;
+        margin-left:auto;
+        margin-right: auto;
+    }
+}
+
+.footer {
+    display:block;
+    width:960px;
+    margin: 20px auto;
+    p {
+        color:#222;
+    }
+}
+
+.app {
+    display: block;
+    width: 980px;
+    margin: 0 auto;
+    height: 970px;
+    
+    font-size:0; // Reset font size so display-block has no gap between elements
+    
+    // Disable user-select on non-form elements
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+*[class^="tile-"] {
+    display: inline-block;
+    float: left;
+    width: 460px;
+    height: 460px;
+    border: 1px solid #979797;
+    margin:10px;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+canvas {
+    display:block;
+}
+
+textarea {
+    
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 15px;
+    width:460px;
+    height:460px;
+    padding:0;
+    resize: none;
+    border: none;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    white-space: pre;
+    word-wrap: normal;
+    overflow-x: scroll;
+    
+    -moz-tab-size:4; -o-tab-size:4; tab-size:4;
+}
+
+.tile-coordinates {
+    text-align:left;
+    .toolbar{
+        width: 100%;
+        height: 48px;
+        background: #D8D8D8;
+        display: block;
+        font-size: 0;
+        
+        .add-coordinate, .add-break {
+            font-size: 15px;
+            margin: 15px;
+            margin-right: 0;
+            display: inline-block;
+            
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    .coordinates{
+        font-size: 0;
+        margin-top: 24px;
+        overflow-y: scroll;
+        height: 370px;
+        .group{
+//            height: 38px;
+            padding: 5px 0 5px 12px;
+            input {
+                $padding-side: 5px;
+                display:inline-block;
+                font-size:18px;
+                height: 18px;
+                width: 104px - 2 * $padding-side - 25px;
+                margin-right: 10px;
+                padding: 10px $padding-side;
+                border: 1px solid #979797;
+                outline: none;
+                
+                &:hover{
+                    border-color: black;
+                }
+            }
+            .move, .remove, .type, .new {
+                @include function-button(black);
+            }
+            .move {
+                &[data-movetype='disabled'] {
+                    color: darkgrey;
+                    border-color: darkgrey;
+                    &:hover{
+                        color: darkgrey;
+                        background: inherit;
+                        cursor: default;
+                    }
+                }
+            }
+            .type {
+                padding-right:0;
+                
+                &[data-type='N']{
+                    @include function-button(green);
+                }
+                &[data-type='R']{
+                    @include function-button(darkorange);
+                }
+                &[data-type='A']{
+                    @include function-button(darkred);
+                }
+            }
+            .new {
+                &[data-isnew="false"] {
+                    color: darkgrey;
+                    border-color: darkgrey;
+                }
+            }
+            
+            // Zebra
+            &:nth-child(2n+1) {
+//                background-color: rgba(#ccc,.3);
+            }
+        }
+    }
+}
+
+.tile-buttons{
+    $buttons_height: 460px;
+    textarea{
+        height: 460px - $buttons_height;
+    }
+    .buttons {
+        height: $buttons_height;
+        text-align: center;
+        padding-top: 32px;
+        .button {
+            display: inline-block;
+            width: 330px;
+            border-radius: 5px;
+            /* Rectangle 38: */
+            border: 1px solid #979797;
+            font-size: 15px;
+            /* Compiled -> Coordina: */
+            
+            padding: 18px 0;
+            margin-bottom: 18px;
+            
+            &:hover {
+                border: 1px solid black;
+                text-decoration: underline;
+//                color:white;
+//                background: black;
+                cursor: pointer;
+            }
+        }
+    }
+}
