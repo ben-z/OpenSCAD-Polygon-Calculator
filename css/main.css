@@ -405,9 +405,10 @@ body {
   margin: 20px auto; }
   /* line 57, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
   .footer p {
-    color: #222; }
+    color: #222;
+    margin: 5px 0; }
 
-/* line 62, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+/* line 63, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
 .app {
   display: block;
   width: 980px;
@@ -421,7 +422,7 @@ body {
   -ms-user-select: none;
   user-select: none; }
 
-/* line 79, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+/* line 80, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
 *[class^="tile-"] {
   display: inline-block;
   float: left;
@@ -432,11 +433,11 @@ body {
   font-size: 18px;
   line-height: 18px; }
 
-/* line 90, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+/* line 91, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
 canvas {
   display: block; }
 
-/* line 94, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+/* line 95, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
 textarea {
   font-family: "Lucida Console", Monaco, monospace;
   font-size: 15px;
@@ -456,36 +457,36 @@ textarea {
   -o-tab-size: 4;
   tab-size: 4; }
 
-/* line 115, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+/* line 116, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
 .tile-coordinates {
   text-align: left; }
-  /* line 117, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+  /* line 118, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
   .tile-coordinates .toolbar {
     width: 100%;
     height: 48px;
     background: #D8D8D8;
     display: block;
     font-size: 0; }
-    /* line 124, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+    /* line 125, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
     .tile-coordinates .toolbar .add-coordinate, .tile-coordinates .toolbar .add-break {
       font-size: 15px;
       margin: 15px;
       margin-right: 0;
       display: inline-block; }
-      /* line 130, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+      /* line 131, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
       .tile-coordinates .toolbar .add-coordinate:hover, .tile-coordinates .toolbar .add-break:hover {
         cursor: pointer;
         text-decoration: underline; }
-  /* line 136, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+  /* line 137, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
   .tile-coordinates .coordinates {
     font-size: 0;
     margin-top: 24px;
     overflow-y: scroll;
     height: 370px; }
-    /* line 141, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+    /* line 142, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
     .tile-coordinates .coordinates .group {
       padding: 5px 0 5px 12px; }
-      /* line 144, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+      /* line 145, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
       .tile-coordinates .coordinates .group input {
         display: inline-block;
         font-size: 18px;
@@ -495,10 +496,10 @@ textarea {
         padding: 10px 5px;
         border: 1px solid #979797;
         outline: none; }
-        /* line 155, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+        /* line 156, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
         .tile-coordinates .coordinates .group input:hover {
           border-color: black; }
-      /* line 159, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+      /* line 160, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
       .tile-coordinates .coordinates .group .move, .tile-coordinates .coordinates .group .remove, .tile-coordinates .coordinates .group .type, .tile-coordinates .coordinates .group .new {
         width: 38px;
         color: black;
@@ -513,19 +514,19 @@ textarea {
           color: white !important;
           background: black !important;
           cursor: pointer; }
-      /* line 163, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+      /* line 164, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
       .tile-coordinates .coordinates .group .move[data-movetype='disabled'] {
         color: darkgrey;
         border-color: darkgrey; }
-        /* line 166, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+        /* line 167, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
         .tile-coordinates .coordinates .group .move[data-movetype='disabled']:hover {
           color: darkgrey;
           background: inherit;
           cursor: default; }
-      /* line 173, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+      /* line 174, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
       .tile-coordinates .coordinates .group .type {
         padding-right: 0; }
-        /* line 176, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+        /* line 177, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
         .tile-coordinates .coordinates .group .type[data-type='N'] {
           width: 38px;
           color: green;
@@ -540,7 +541,7 @@ textarea {
             color: white !important;
             background: green !important;
             cursor: pointer; }
-        /* line 179, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+        /* line 180, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
         .tile-coordinates .coordinates .group .type[data-type='R'] {
           width: 38px;
           color: darkorange;
@@ -555,7 +556,7 @@ textarea {
             color: white !important;
             background: darkorange !important;
             cursor: pointer; }
-        /* line 182, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+        /* line 183, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
         .tile-coordinates .coordinates .group .type[data-type='A'] {
           width: 38px;
           color: darkred;
@@ -570,20 +571,20 @@ textarea {
             color: white !important;
             background: darkred !important;
             cursor: pointer; }
-      /* line 187, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+      /* line 188, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
       .tile-coordinates .coordinates .group .new[data-isnew="false"] {
         color: darkgrey;
         border-color: darkgrey; }
 
-/* line 203, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+/* line 204, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
 .tile-buttons textarea {
   height: 0px; }
-/* line 206, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+/* line 207, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
 .tile-buttons .buttons {
   height: 460px;
   text-align: center;
   padding-top: 32px; }
-  /* line 210, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+  /* line 211, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
   .tile-buttons .buttons .button {
     display: inline-block;
     width: 330px;
@@ -594,7 +595,7 @@ textarea {
     /* Compiled -> Coordina: */
     padding: 18px 0;
     margin-bottom: 18px; }
-    /* line 222, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
+    /* line 223, /Users/benzhang/Documents/Projects/Random Sketches/Polygon Calculator/css/main.scss */
     .tile-buttons .buttons .button:hover {
       border: 1px solid black;
       text-decoration: underline;

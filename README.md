@@ -6,7 +6,20 @@ Enabling convenient conversions between relative measurements and absolute coord
 
 Access the application [here](https://ben-z.github.io/OpenSCAD-Polygon-Calculator).
 
-Example code:
+###Example 1:
+
+```openscad
+// This is a line
+polygon(
+	points=[
+		[0.00000, 0.00000]
+		,[100.00000, 100.00000]
+	]
+	,paths=[[0, 1]]
+);
+```
+
+###Example 2:
 
 ```openscad
 // Paste in the bottom-left box and click "Compiled -> Coordinates"
@@ -22,6 +35,26 @@ polygon(
 		,[0.00000, 0.00000]
 	]
 	,paths=[[0, 1, 2, 3, 4, 5, 6, 7]]
+);
+```
+
+###Example 3: 
+
+
+```openscad
+// Paste in the bottom-left box and click "Compiled -> Coordinates"
+polygon(
+	points=[
+		[0.00000, 0.00000]
+		,[100.00000, 0.00000]
+		,[0.00000, 100.00000]
+		,[0.00000, 0.00000]
+		,[10.00000, 10.00000]
+		,[80.00000, 10.00000]
+		,[10.00000, 80.00000]
+		,[10.00000, 10.00000]
+	]
+	,paths=[[0, 1, 2, 3], [4, 5, 6, 7]]
 );
 ```
 

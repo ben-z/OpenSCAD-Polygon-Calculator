@@ -18,10 +18,12 @@
 
 var App = React.createClass({
     getInitialState: function() {
+        var defaultCoordinates = [{"x":0,"y":0,"type":"A","isNew":true},{"x":100,"y":0,"type":"A","isNew":false},{"x":0,"y":100,"type":"A","isNew":false},{"x":0,"y":0,"type":"A","isNew":false},{"x":10,"y":10,"type":"A","isNew":true},{"x":80,"y":10,"type":"A","isNew":false},{"x":10,"y":80,"type":"A","isNew":false},{"x":10,"y":10,"type":"A","isNew":false}];
+        
         if(typeof(Storage) !== "undefined") {
-            var coordinates = JSON.parse(localStorage.getItem("coordinates")) || [{x:0,y:0,type:'A',isNew:true},{x:+100,y:+100,type:'R',isNew:false}];
+            var coordinates = JSON.parse(localStorage.getItem("coordinates")) || defaultCoordinates;
         } else {
-            var coordinates = [{x:0,y:0,type:'A',isNew:true},{x:+100,y:+100,type:'R',isNew:false}];
+            var coordinates = defaultCoordinates;
         }
         var compiled = this._compileStr(coordinates);
         
@@ -151,7 +153,17 @@ var App = React.createClass({
             coordinates: coords
         });
     },
+    _handleResetApp: function(){
+        var r = confirm("Clear data and reload?");
+        if(r){
+            if(typeof(Storage) !== "undefined") {
+                localStorage.clear();
+            }
+            location.reload();
+        }
+    },
     render: function() {
+//        window.state = this.state;
         return(
             <div>
                 <div className="tile-canvas"><canvas width="460px" height="460px">Your browser does not support HTML5 canvas</canvas></div>
@@ -174,6 +186,7 @@ var App = React.createClass({
                         <div className="button" onClick={this._handleReadCompiled}>{'Compiled -> Coordinates'}</div>
                         <div className="button" onClick={this._handleShowRelative}>{'Show Relative Coordinates'}</div>
                         <div className="button" onClick={this._handleShowAbsolute}>{'Show Absolute Coordinates'}</div>
+                        <div className="button" onClick={this._handleResetApp}>{'Reset Application*'}</div>
                     </div>
                     <textarea ref="raw" value={this.state.raw} onChange={this._handleRawChange}></textarea>
                 </div>
