@@ -1,6 +1,6 @@
 #OpenSCAD Polygon Calculator
 
-**Tl;dr:** Access the application [here](https://ben-z.github.io/OpenSCAD-Polygon-Calculator).
+**Tl;dr:** access the application [here](https://ben-z.github.io/OpenSCAD-Polygon-Calculator).
 
 Enabling convenient conversions between relative measurements and absolute coordinates in Openscad.
 
