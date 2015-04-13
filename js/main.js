@@ -170,7 +170,7 @@ var App = React.createClass({
         }
     },
     render: function() {
-        window.state = this.state;
+//        window.state = this.state;
         return(
             <div>
                 <div className="tile-canvas"><canvas width="460px" height="460px">Your browser does not support HTML5 canvas</canvas></div>
