@@ -18,12 +18,19 @@
 
 var App = React.createClass({
     getInitialState: function() {
-        var defaultCoordinates = [{"x":0,"y":0,"type":"A","isNew":true},{"x":100,"y":0,"type":"A","isNew":false},{"x":0,"y":100,"type":"A","isNew":false},{"x":0,"y":0,"type":"A","isNew":false},{"x":10,"y":10,"type":"A","isNew":true},{"x":80,"y":10,"type":"A","isNew":false},{"x":10,"y":80,"type":"A","isNew":false},{"x":10,"y":10,"type":"A","isNew":false}];
+        // Dynamically use default examples
+        var defaultCoordinates = [
+            [{"x":0,"y":0,"type":"A","isNew":true},{"x":100,"y":100,"type":"A","isNew":false}]
+            ,[{"x":0,"y":0,"type":"A","isNew":true},{"x":11.75,"y":0,"type":"A","isNew":false},{"x":11.75,"y":115.15,"type":"A","isNew":false},{"x":7.45,"y":115.15,"type":"A","isNew":false},{"x":-6,"y":92.68,"type":"A","isNew":false},{"x":-6,"y":67.83,"type":"A","isNew":false},{"x":0,"y":67.83,"type":"A","isNew":false},{"x":0,"y":0,"type":"A","isNew":false}]
+            ,[{"x":0,"y":0,"type":"A","isNew":true},{"x":100,"y":0,"type":"A","isNew":false},{"x":0,"y":100,"type":"A","isNew":false},{"x":0,"y":0,"type":"A","isNew":false},{"x":10,"y":10,"type":"A","isNew":true},{"x":80,"y":10,"type":"A","isNew":false},{"x":10,"y":80,"type":"A","isNew":false},{"x":10,"y":10,"type":"A","isNew":false}]
+        ];
+        
+        var random = Math.floor((Math.random() * (defaultCoordinates.length)));
         
         if(typeof(Storage) !== "undefined") {
-            var coordinates = JSON.parse(localStorage.getItem("coordinates")) || defaultCoordinates;
+            var coordinates = JSON.parse(localStorage.getItem("coordinates")) || defaultCoordinates[random];
         } else {
-            var coordinates = defaultCoordinates;
+            var coordinates = defaultCoordinates[random];
         }
         var compiled = this._compileStr(coordinates);
         
@@ -154,7 +161,7 @@ var App = React.createClass({
         });
     },
     _handleResetApp: function(){
-        var r = confirm("Clear data and reload?");
+        var r = confirm("Clear data and load a default example?");
         if(r){
             if(typeof(Storage) !== "undefined") {
                 localStorage.clear();
@@ -163,7 +170,7 @@ var App = React.createClass({
         }
     },
     render: function() {
-//        window.state = this.state;
+        window.state = this.state;
         return(
             <div>
                 <div className="tile-canvas"><canvas width="460px" height="460px">Your browser does not support HTML5 canvas</canvas></div>
